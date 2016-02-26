@@ -24,11 +24,15 @@ class UdaciList
   end
 
   def all
-    puts "-" * @title.length
-    puts @title
-    puts "-" * @title.length
+    #puts "-" * @title.length
+    #puts @title
+    #puts "-" * @title.length
+    rows = []
     @items.each_with_index do |item, position|
-      puts "#{position + 1}) #{item.details}"
+      #puts "#{position + 1}) #{item.details}"
+      rows << [position + 1, item.details]
     end
+    table = Terminal::Table.new :rows => rows
+    puts table
   end
 end

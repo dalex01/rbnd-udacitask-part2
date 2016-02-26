@@ -1,6 +1,7 @@
+require 'bundler/setup'
 require 'chronic'
 require 'colorize'
-require 'artii'
+require 'terminal-table'
 require 'date'
 require_relative "lib/listable"
 require_relative "lib/errors"

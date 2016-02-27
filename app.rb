@@ -46,3 +46,11 @@ new_list.all
 # DEMO FILTER BY ITEM TYPE
 # ------------------------
 new_list.filter("event")
+# NEW FEATURES
+# 1. Find item by position in the list
+# 2. Change the priority level of item
+# ------------------------
+new_list.find_item(1).priority = "high"
+new_list.find_item(2).priority = "medium"
+new_list.find_item(3).priority = "low"
+new_list.filter("todo")

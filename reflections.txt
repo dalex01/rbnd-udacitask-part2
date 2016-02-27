@@ -1,13 +1,26 @@
 # What you added to Udacitask 2.0
 # -------------------------------------------------------
+
 1. What is the gem of your choice and how did you use it?
+terminal-table
+
 2. Describe the 2 features you added to the project.
-  a) Feature 1...
-  b) Feature 2...
+  a) Feature 1: ability to find item by its id in the list
+  b) Feature 2: ability to change priority
 
 # REFLECTIONS
 # -------------------------------------------------------
+
 1. How long did you spend working on this project?
+About 4 hours
+
 2. What was the most rewarding challenge you conquered?
+Find Gem that I like :)
+
 3. What two additional features did you build? Why?
+  a) Feature 1: ability to find item by its id in the list
+  b) Feature 2: ability to change priority
+These feature are should be in any ToDo list app
+
 4. Where do you still have room to grow?
+Ruby syntax and Ruby way of programming

@@ -24,7 +24,7 @@ class UdaciList
   end
 
   def all
-    table = filterItems @items
+    table = filter_items @items
     puts table
   end
 
@@ -37,15 +37,19 @@ class UdaciList
     elsif (type == "link")
       filtered = @items.select{|item| item.is_a?(LinkItem)}
     end
-    table = filterItems filtered
+    table = filter_items filtered
     puts table
   end
 
-  def filterItems(itemsArray)
+  def filter_items(itemsArray)
     rows = []
     itemsArray.each_with_index do |item, position|
       rows << [position + 1, item.details]
     end
     Terminal::Table.new :rows => rows
+  end
+
+  def find_item(index)
+    @items[index - 1]
   end
 end

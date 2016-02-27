@@ -1,6 +1,7 @@
 class TodoItem
   include Listable
-  attr_reader :description, :type, :due, :priority
+  attr_accessor :priority
+  attr_reader :description, :type, :due
 
   def initialize(description, type, options={})
     @description = description
@@ -15,4 +16,5 @@ class TodoItem
     "due: " + format_date({:due => @due}) +
     format_priority(@priority)
   end
+
 end

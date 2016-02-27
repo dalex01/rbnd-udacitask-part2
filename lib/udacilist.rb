@@ -37,6 +37,10 @@ class UdaciList
     elsif (type == "link")
       filtered = @items.select{|item| item.is_a?(LinkItem)}
     end
+    if (filtered.length == 0)
+      puts "There is no items with type " + type + " in list " + self.to_s
+      return
+    end
     table = filter_items filtered
     puts table
   end

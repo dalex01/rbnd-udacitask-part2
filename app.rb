@@ -16,7 +16,7 @@ list.add("todo", "Sweep floors", due: "2016-01-30")
 list.add("todo", "Buy groceries", priority: "high")
 list.add("event", "Birthday Party", start_date: "2016-05-08")
 list.add("event", "Vacation", start_date: "2016-05-28", end_date: "2016-05-31")
-list.add("link", "https://github.com", site_name: "GitHub Homepage")
+#list.add("link", "https://github.com", site_name: "GitHub Homepage")
 list.all
 list.delete(3)
 list.all
@@ -46,6 +46,7 @@ new_list.all
 # DEMO FILTER BY ITEM TYPE
 # ------------------------
 new_list.filter("event")
+list.filter("link")
 # NEW FEATURES
 # 1. Find item by position in the list
 # 2. Change the priority level of item

@@ -13,9 +13,9 @@ class UdaciList
     if (priority)
       raise UdaciListErrors::InvalidPriorityValue, "Priority: " + priority if !(["high", "medium", "low"].include? priority)
     end
-    @items.push TodoItem.new(description, options) if type == "todo"
-    @items.push EventItem.new(description, options) if type == "event"
-    @items.push LinkItem.new(description, options) if type == "link"
+    @items.push TodoItem.new(description, type, options) if type == "todo"
+    @items.push EventItem.new(description, type, options) if type == "event"
+    @items.push LinkItem.new(description, type, options) if type == "link"
   end
 
   def delete(index)
@@ -24,15 +24,28 @@ class UdaciList
   end
 
   def all
-    #puts "-" * @title.length
-    #puts @title
-    #puts "-" * @title.length
+    table = filterItems @items
+    puts table
+  end
+
+  def filter(type)
+    filtered = []
+    if (type == "event")
+      filtered = @items.select{|item| item.is_a?(EventItem)}
+    elsif (type == "todo")
+      filtered = @items.select{|item| item.is_a?(TodoItem)}
+    elsif (type == "link")
+      filtered = @items.select{|item| item.is_a?(LinkItem)}
+    end
+    table = filterItems filtered
+    puts table
+  end
+
+  def filterItems(itemsArray)
     rows = []
-    @items.each_with_index do |item, position|
-      #puts "#{position + 1}) #{item.details}"
+    itemsArray.each_with_index do |item, position|
       rows << [position + 1, item.details]
     end
-    table = Terminal::Table.new :rows => rows
-    puts table
+    Terminal::Table.new :rows => rows
   end
 end

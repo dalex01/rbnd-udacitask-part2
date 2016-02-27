@@ -4,6 +4,10 @@ module Listable
     "#{description}".ljust(30)
   end
 
+  def format_type(type)
+    "#{type}".ljust(30)
+  end
+
   def format_date(options={})
   	if (options.has_key?(:due))
   		due = options[:due]
